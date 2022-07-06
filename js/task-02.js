@@ -7,10 +7,7 @@ const ingredients = [
   "Condiments",
 ];
 const unorderedList = document.querySelector("#ingredients");
-for (const elements of ingredients) {
-  const ingredient = document.createElement("li");
-  ingredient.textContent = elements;
-  ingredient.classList.add("item");
-  unorderedList.append(ingredient);
-  console.log(ingredient);
-}
+const markup = ingredients
+  .map((ingredient) => `<li class="list-item">${ingredient}</li>`)
+  .join("");
+unorderedList.innerHTML = markup;
