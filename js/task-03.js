@@ -14,13 +14,9 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-const markup = images
-  .map((img) => `<li><img src="${img.url}" alt="${img.alt}" width = 200px height = 150px></li>`)
-  .join("");
-
-  list.innerHTML = markup;
-// for (const img of images) {
-//   const galleryItem = `<li><img src="${img.url}" alt="${img.alt}" width = 200px height = 150px></li>`;
-//   list.insertAdjacentHTML("afterbegin", galleryItem);
-//   console.log(galleryItem);
-// }
+const markup = images.reduce(
+  (acc, img) =>
+    `${acc}<li><img src="${img.url}" alt="${img.alt}" width = 200px height = 150px></li>`,
+  ""
+);
+list.innerHTML = markup;

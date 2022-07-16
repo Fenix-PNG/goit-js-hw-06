@@ -6,8 +6,10 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const unorderedList = document.querySelector("#ingredients");
-const markup = ingredients
-  .map((ingredient) => `<li class="list-item">${ingredient}</li>`)
-  .join("");
+const unorderedList = document.querySelector("ul");
+
+const markup = ingredients.reduce(
+  (acc, ingredient) => acc + `<li class="list-item">${ingredient}</li>`,
+  ""
+);
 unorderedList.innerHTML = markup;
