@@ -8,8 +8,14 @@ const ingredients = [
 ];
 const unorderedList = document.querySelector("ul");
 
-const markup = ingredients.reduce(
-  (acc, ingredient) => acc + `<li class="list-item">${ingredient}</li>`,
-  ""
-);
-unorderedList.innerHTML = markup;
+const array = [];
+ingredients.forEach((ingredient) => {
+  const newLi = document.createElement("li");
+  newLi.textContent = ingredient;
+  newLi.className = "item";
+  array.push(newLi);
+});
+
+unorderedList.append(...array);
+
+unorderedList.style.listStyle = 'none';

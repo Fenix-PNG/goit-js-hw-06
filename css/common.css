@@ -23,16 +23,5 @@ button {
   cursor: pointer;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
 
-.gallery {
-  display: flex;
-}
-
-.gallery li {
-  padding-left: 10px;
-}
  

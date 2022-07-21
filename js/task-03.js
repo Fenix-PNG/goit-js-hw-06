@@ -14,9 +14,20 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-const markup = images.reduce(
-  (acc, img) =>
-    `${acc}<li><img src="${img.url}" alt="${img.alt}" width = 200px height = 150px></li>`,
-  ""
-);
-list.innerHTML = markup;
+
+const markup = images
+  .map(
+    (image) =>
+      `<li><img class="picture" src="${image.url}" alt="${image.alt}" width = 200px height = 150px></img></li>`
+  )
+  .join("");
+
+list.insertAdjacentHTML("beforeend", markup);
+
+const pictures = document.querySelectorAll(".picture");
+
+list.style.display = "flex";
+list.style.flexWrap = "column-reverse";
+list.style.listStyle = "none";
+list.style.gap = "20px";
+list.style.justifyContent = "center";
